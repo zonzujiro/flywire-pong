@@ -1,0 +1,7 @@
+* text=auto eol=lf
+model.json -text
+vendor/ale.js -text
+*.wasm binary
+*.data binary
+*.zip binary
+*.gz binary

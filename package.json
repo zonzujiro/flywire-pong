@@ -1,0 +1,12 @@
+{
+  "name": "flywire-pong",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/parity.mjs",
+    "test:browser": "node tests/browser.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0"
+  }
+}

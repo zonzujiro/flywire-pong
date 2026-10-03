@@ -1,0 +1,42 @@
+{
+  "parity": {
+    "cases": 30,
+    "max_action_probability_error": 7.870510894680827E-06,
+    "max_state_error": 4.172325134277344E-07,
+    "max_logit_error": 4.1961669921875E-05,
+    "max_sensory_error": 0,
+    "passed": true
+  },
+  "files_sha256": {
+    "vendor/ale-source-v0.12.0.zip": "4290841be7733b94fbe2634778ae669687afd6ce0c78189c2d22fc32fe589e20",
+    "vendor/ale.data": "850e8a0ea9448a4387c3997c98c94ddd6ac17ba913881c070c28cd5063226318",
+    "vendor/ale.wasm": "183a1fce564e47e49b2aac37a014b36109f867a7293e3caff6e4d355be870dac",
+    "vendor/ale.js": "64cd74228498418f180a2792dd0368a9776aaa2c49ee9d9b664c08994f923cb1",
+    "model.json": "9bc18a147a4a2da611e1d8ae268c74934f5f4e0bbf36c7a896194f31c113dd58",
+    "tests/parity.json.gz": "58593e3f3227abedc6ddaa8d5602978f28d8c2e4b65637eb9fa4809b58f33f7d"
+  },
+  "limitations": [
+    "Not a browser win-rate benchmark",
+    "Browser ALE 0.12.0 versus Python ALE 0.12.1",
+    "Different action RNG and direct ALE seed handling"
+  ],
+  "checkpoint_sha256": "17c2707404d1125ed93197212e28950ddcce7d7d0959da49a65ccc7351d26a1f",
+  "browser_smoke_test": {
+    "browser": "Microsoft Edge, headless",
+    "passed": true,
+    "errors": [],
+    "viewport_widths": [
+      1280,
+      390
+    ],
+    "checks": [
+      "WASM load",
+      "neural actions",
+      "pause",
+      "new game",
+      "speed",
+      "native points",
+      "mobile layout"
+    ]
+  }
+}
