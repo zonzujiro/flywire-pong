@@ -13,6 +13,12 @@ The trained FlyWire network controls the **right paddle** against Atari's built-
 
 The score above the arena counts points in the current game. The side panel counts completed games in the current page session. Reloading clears these counters. Action bars are probabilities; actions are sampled, rather than always taking the largest bar.
 
+## Network inspector
+
+Click **Inspect network** to pause and inspect the last decision. Step through its 12 internal updates, click/search individual neurons, inspect source annotations and directed connections, compare fresh or pre-PPO weights with trained weights, and explore local influence on each action score. **Next game decision** advances one neural command; **Play** resumes normal playback. You can download the complete trace with FlyWire IDs and both input images. See [the inspector guide and scientific limits](docs/inspector.md).
+
+The inspector uses the exact images and frozen checkpoint from the recorded choice. Repeated inspection calls leave the emulator and action random generator untouched. Its miniature input images precede the chosen action; the main game board shows the subsequent frame. Graph layout is schematic, and influence is a local sensitivity calculation of our artificial model.
+
 ## What the network is
 
 - 1,230 computational states correspond to selected FlyWire FAFB783 neurons; their original neuron IDs remain strings in `model.json`.
@@ -67,6 +73,7 @@ Alternatively, `npx playwright install chromium` and set `BROWSER_CHANNEL=chromi
 | `game-worker.js` | Runs the emulator and network away from the UI thread |
 | `network.mjs` | Sparse recurrent inference and retina encoder |
 | `model.json` | Immutable trained model export and neuron IDs |
+| `inspector.mjs`, `inspection.mjs`, `inspector-data.json` | Decision inspection, sensitivity analysis, biological metadata and pinned weight baselines |
 | `tests/` | Python parity fixtures and browser checks |
 | `verification/` | Checkpoint provenance and measured port errors |
 | `vendor/` | Unmodified official ALE WASM package and corresponding source |

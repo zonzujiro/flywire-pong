@@ -1,0 +1,31 @@
+{
+  "browser": {
+    "reset_discards_trace": true,
+    "identical_frames_actions_scores_probabilities": true,
+    "game_invariance_decisions": 320,
+    "download_pass": true,
+    "inspection_requests": 40,
+    "desktop_and_mobile_pass": true
+  },
+  "limits": [
+    "Local action-score sensitivity, not causal biological attribution",
+    "Initial weights are engineering synapse-count initialization",
+    "No new training or browser win-rate evaluation"
+  ],
+  "inspector_metadata_sha256": "a5566ba0bbc0b761f0bd484ef81b7b1fe8c7ac6231f719a2487033dd15fccdfc",
+  "graph": {
+    "edge_rows": 8515,
+    "neurons": 1230,
+    "visual_inputs": 355,
+    "weight_baselines": 2
+  },
+  "python_parity": {
+    "independent_finite_difference_check": true,
+    "updates": 12,
+    "trace_and_autograd_cases": 3,
+    "max_relative_gradient_error": 3.812921626839474E-05,
+    "inference_cases": 30,
+    "max_state_error": 2.8312206268310547E-07
+  },
+  "checkpoint_sha256": "17c2707404d1125ed93197212e28950ddcce7d7d0959da49a65ccc7351d26a1f"
+}

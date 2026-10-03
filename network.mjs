@@ -101,8 +101,9 @@ export class FlyPolicy {
     return sensory;
   }
 
-  forward(sensory) {
+  forward(sensory, capture=false) {
     this.state.fill(0); // The verified policy resets activity each decision.
+    const states=capture?[this.state.slice()]:null;
     for(let pass=0;pass<this.m.internal_steps;pass++) {
       this.incoming.fill(0);
       for(let e=0;e<this.weights.length;e++) {
@@ -117,6 +118,7 @@ export class FlyPolicy {
         this.next[n]=f(Math.tanh(total));
       }
       [this.state,this.next]=[this.next,this.state];
+      if(capture)states.push(this.state.slice());
     }
     const logits=new Float32Array(3);
     for(let action=0;action<3;action++) {
@@ -126,7 +128,7 @@ export class FlyPolicy {
     }
     const max=Math.max(...logits),probabilities=Array.from(logits,x=>Math.exp(x-max));
     const sum=probabilities.reduce((a,b)=>a+b,0);
-    return {logits:Array.from(logits),probabilities:probabilities.map(x=>x/sum)};
+    return {logits:Array.from(logits),probabilities:probabilities.map(x=>x/sum),...(capture?{states,sensory:Array.from(sensory)}:{})};
   }
 
   step(previous,current,width) {

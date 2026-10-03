@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node tests/parity.mjs",
-    "test:browser": "node tests/browser.mjs"
+    "test": "node tests/parity.mjs && node tests/inspection.mjs",
+    "test:browser": "node tests/browser.mjs && node tests/inspector-browser.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0"
