@@ -1,0 +1,23 @@
+{
+  "verified_utc": "2026-10-03T17:33:07.8016104Z",
+  "runtime_asset_http_status": 200,
+  "url": "https://zonzujiro.github.io/flywire-pong/",
+  "limitation": "Integration smoke test, not a browser win-rate benchmark",
+  "tested_commit": "0ee8a9668b5357d387641709cc8d98974719295a",
+  "module_and_wasm_mime_types_valid": true,
+  "pages_build": "success",
+  "browser_smoke_test": {
+    "errors": [],
+    "checks": [
+      "WASM load",
+      "neural actions",
+      "pause",
+      "new game",
+      "speed",
+      "native points",
+      "mobile layout"
+    ],
+    "browser": "Microsoft Edge, headless",
+    "passed": true
+  }
+}
