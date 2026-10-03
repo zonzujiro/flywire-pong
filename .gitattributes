@@ -1,5 +1,5 @@
 * text=auto eol=lf
-model.json -text
+model.json -text whitespace=cr-at-eol
 vendor/ale.js -text
 *.wasm binary
 *.data binary
